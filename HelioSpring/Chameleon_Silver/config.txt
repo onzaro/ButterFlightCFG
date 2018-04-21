@@ -1,5 +1,6 @@
 # version
-# ButterFlight / HELIOSPRING (HESP) 3.5.1 | IMUF: 1.0.5 Apr  6 2018 / 20:38:56 (62d211f49) MSP API: 1.40
+# ButterFlight / HELIOSPRING (HESP) 3.5.1 Apr 15 2018 / 18:01:45 (ea1591f75) MSP API: 1.40
+# IMU-F Version: 106
 
 # name
 name -
@@ -10,6 +11,10 @@ resource MOTOR 1 C06
 resource MOTOR 2 C07
 resource MOTOR 3 C08
 resource MOTOR 4 C09
+resource MOTOR 5 NONE
+resource MOTOR 6 NONE
+resource MOTOR 7 NONE
+resource MOTOR 8 NONE
 resource PPM 1 B14
 resource PWM 1 B14
 resource PWM 2 NONE
@@ -46,7 +51,7 @@ resource I2C_SCL 3 NONE
 resource I2C_SDA 1 NONE
 resource I2C_SDA 2 NONE
 resource I2C_SDA 3 NONE
-resource LED 1 A08
+resource LED 1 B07
 resource LED 2 NONE
 resource LED 3 NONE
 resource RX_BIND 1 NONE
@@ -60,16 +65,23 @@ resource SPI_MISO 3 B04
 resource SPI_MOSI 1 A07
 resource SPI_MOSI 2 C03
 resource SPI_MOSI 3 B05
-resource ESCSERIAL 1 B07
+resource ESCSERIAL 1 NONE
 resource CAMERA_CONTROL 1 B06
 resource ADC_BATT 1 A00
 resource ADC_RSSI 1 NONE
 resource ADC_CURR 1 A01
 resource ADC_EXT 1 NONE
+resource COMPASS_CS 1 NONE
 resource PINIO 1 NONE
 resource PINIO 2 NONE
 resource PINIO 3 NONE
 resource PINIO 4 NONE
+
+# mixer
+mixer QUADX
+
+mmix reset
+
 
 # feature
 feature -RX_PPM
@@ -98,10 +110,8 @@ feature -ANTI_GRAVITY
 feature -DYNAMIC_FILTER
 feature -LEGACY_SA_SUPPORT
 feature RX_SERIAL
-feature LED_STRIP
 feature OSD
 feature AIRMODE
-feature ANTI_GRAVITY
 
 # beeper
 beeper GYRO_CALIBRATED
@@ -327,14 +337,14 @@ set gyro_notch1_hz = 0
 set gyro_notch1_cutoff = 0
 set gyro_notch2_hz = 0
 set gyro_notch2_cutoff = 0
-set imuf_mode = 32
+set imuf_mode = 48
 set imuf_rate = 16K
 set imuf_pitch_q = 3500
-set imuf_pitch_w = 10
+set imuf_pitch_w = 6
 set imuf_roll_q = 3500
-set imuf_roll_w = 10
+set imuf_roll_w = 6
 set imuf_yaw_q = 2500
-set imuf_yaw_w = 10
+set imuf_yaw_w = 6
 set imuf_pitch_lpf_cutoff_hz = 150
 set imuf_roll_lpf_cutoff_hz = 150
 set imuf_yaw_lpf_cutoff_hz = 150
@@ -346,7 +356,15 @@ set acc_hardware = AUTO
 set acc_lpf_hz = 10
 set acc_trim_pitch = 0
 set acc_trim_roll = 0
-set acc_calibration = -90,-1,-175
+set acc_calibration = -93,24,-158
+set align_mag = DEFAULT
+set mag_bustype = NONE
+set mag_i2c_device = 0
+set mag_i2c_address = 0
+set mag_spi_device = 0
+set mag_hardware = NONE
+set mag_declination = 0
+set mag_calibration = 0,0,0
 set mid_rc = 1500
 set min_check = 1050
 set max_check = 1900
@@ -377,9 +395,9 @@ set max_throttle = 2000
 set min_command = 1000
 set dshot_idle_value = 450
 set dshot_burst = ON
-set use_unsynced_pwm = ON
+set use_unsynced_pwm = OFF
 set motor_pwm_protocol = DSHOT1200
-set motor_pwm_rate = 32000
+set motor_pwm_rate = 480
 set motor_pwm_inversion = OFF
 set thr_corr_value = 0
 set thr_corr_angle = 800
@@ -429,7 +447,7 @@ set imu_dcm_kp = 7013
 set imu_dcm_ki = 13
 set small_angle = 25
 set auto_disarm_delay = 5
-set gyro_cal_on_first_arm = OFF
+set gyro_cal_on_first_arm = ON
 set use_stick_arming = OFF
 set gps_provider = NMEA
 set gps_sbas_mode = AUTO
@@ -561,7 +579,7 @@ set usb_hid_cdc = OFF
 # profile
 profile 0
 
-set dterm_lowpass_type = PT1
+set dterm_lowpass_type = BIQUAD
 set dterm_filter_style = KD_FILTER_NOSP
 set dterm_lowpass = 65
 set dterm_notch_hz = 260
@@ -569,7 +587,7 @@ set dterm_notch_cutoff = 160
 set vbat_pid_gain = OFF
 set pid_at_min_throttle = ON
 set anti_gravity_threshold = 350
-set anti_gravity_gain = 2900
+set anti_gravity_gain = 3000
 set setpoint_relax_ratio = 100
 set dterm_setpoint_weight = 100
 set acc_limit_yaw = 100
@@ -618,15 +636,15 @@ rateprofile 0
 set thr_mid = 50
 set thr_expo = 0
 set rates_type = BETAFLIGHT
-set roll_rc_rate = 98
-set pitch_rc_rate = 98
-set yaw_rc_rate = 98
-set roll_expo = 22
-set pitch_expo = 22
-set yaw_expo = 22
-set roll_srate = 81
-set pitch_srate = 81
-set yaw_srate = 80
+set roll_rc_rate = 90
+set pitch_rc_rate = 90
+set yaw_rc_rate = 90
+set roll_expo = 20
+set pitch_expo = 20
+set yaw_expo = 20
+set roll_srate = 82
+set pitch_srate = 82
+set yaw_srate = 82
 set tpa_rate = 10
 set tpa_breakpoint = 1650
 
