@@ -125,6 +125,7 @@ feature TELEMETRY
 feature OSD
 feature AIRMODE
 feature ANTI_GRAVITY
+feature DYNAMIC_FILTER
 
 # beeper
 beeper GYRO_CALIBRATED
@@ -268,7 +269,7 @@ mode_color 7 0 3
 aux 0 0 0 900 1300 0
 aux 1 1 1 900 1300 0
 aux 2 13 2 1700 2100 0
-aux 3 0 0 900 900 0
+aux 3 36 2 1700 2100 0
 aux 4 0 0 900 900 0
 aux 5 0 0 900 900 0
 aux 6 0 0 900 900 0
@@ -406,7 +407,7 @@ set serialrx_halfduplex = OFF
 set adc_device = 1
 set input_filtering_mode = OFF
 set blackbox_p_ratio = 32
-set blackbox_device = SDCARD
+set blackbox_device = SPIFLASH
 set blackbox_record_acc = ON
 set blackbox_mode = NORMAL
 set min_throttle = 1070
@@ -464,7 +465,7 @@ set accz_deadband = 40
 set acc_unarmedcal = ON
 set imu_dcm_kp = 2500
 set imu_dcm_ki = 0
-set small_angle = 25
+set small_angle = 180
 set auto_disarm_delay = 5
 set gyro_cal_on_first_arm = OFF
 set use_stick_arming = OFF
@@ -508,18 +509,18 @@ set osd_ah_max_rol = 40
 set osd_tim1 = 2560
 set osd_tim2 = 2561
 set osd_vbat_pos = 234
-set osd_rssi_pos = 234
-set osd_tim_1_pos = 2133
-set osd_tim_2_pos = 234
+set osd_rssi_pos = 2050
+set osd_tim_1_pos = 2071
+set osd_tim_2_pos = 2103
 set osd_remaining_time_estimate_pos = 234
-set osd_flymode_pos = 365
+set osd_flymode_pos = 2054
 set osd_throttle_pos = 234
-set osd_vtx_channel_pos = 234
+set osd_vtx_channel_pos = 2434
 set osd_crosshairs = 234
 set osd_ah_sbar = 234
 set osd_ah_pos = 234
-set osd_current_pos = 234
-set osd_mah_drawn_pos = 234
+set osd_current_pos = 3
+set osd_mah_drawn_pos = 2060
 set osd_craft_name_pos = 234
 set osd_gps_speed_pos = 234
 set osd_gps_lon_pos = 234
@@ -535,8 +536,8 @@ set osd_pid_yaw_pos = 234
 set osd_debug_pos = 234
 set osd_power_pos = 234
 set osd_pidrate_profile_pos = 234
-set osd_warnings_pos = 329
-set osd_avg_cell_voltage_pos = 2406
+set osd_warnings_pos = 2346
+set osd_avg_cell_voltage_pos = 2065
 set osd_pit_ang_pos = 234
 set osd_rol_ang_pos = 234
 set osd_battery_usage_pos = 234
@@ -548,7 +549,7 @@ set osd_esc_rpm_pos = 234
 set osd_rtc_date_time_pos = 234
 set osd_adjustment_range_pos = 234
 set osd_core_temp_pos = 234
-set osd_stat_max_spd = ON
+set osd_stat_max_spd = OFF
 set osd_stat_max_dist = OFF
 set osd_stat_min_batt = ON
 set osd_stat_min_rssi = ON
@@ -556,10 +557,10 @@ set osd_stat_max_curr = ON
 set osd_stat_used_mah = ON
 set osd_stat_max_alt = OFF
 set osd_stat_bbox = ON
-set osd_stat_endbatt = OFF
+set osd_stat_endbatt = ON
 set osd_stat_bb_no = ON
 set osd_stat_rtc_date_time = OFF
-set osd_stat_tim_1 = OFF
+set osd_stat_tim_1 = ON
 set osd_stat_tim_2 = ON
 set task_statistics = ON
 set debug_mode = NONE
@@ -780,7 +781,7 @@ set gps_nav_i = 33
 set gps_nav_d = 83
 
 # restore original profile selection
-profile 2
+profile 0
 
 # rateprofile
 rateprofile 0
