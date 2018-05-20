@@ -255,7 +255,7 @@ mode_color 7 0 3
 aux 0 0 0 900 1300 0
 aux 1 1 1 900 1300 0
 aux 2 13 2 1700 2100 0
-aux 3 0 0 900 900 0
+aux 3 36 2 1700 2100 0
 aux 4 0 0 900 900 0
 aux 5 0 0 900 900 0
 aux 6 0 0 900 900 0
@@ -446,7 +446,7 @@ set accz_deadband = 40
 set acc_unarmedcal = ON
 set imu_dcm_kp = 7013
 set imu_dcm_ki = 13
-set small_angle = 25
+set small_angle = 180
 set auto_disarm_delay = 5
 set gyro_cal_on_first_arm = OFF
 set use_stick_arming = OFF
@@ -852,3 +852,7 @@ set tpa_breakpoint = 1650
 
 # restore original rateprofile selection
 rateprofile 0
+
+# save configuration
+save
+# 
