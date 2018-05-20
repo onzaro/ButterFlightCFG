@@ -1,5 +1,5 @@
 # version
-# ButterFlight / HELIOSPRING (HESP) 3.5.1 Apr 15 2018 / 18:01:45 (ea1591f75) MSP API: 1.40
+# ButterFlight / HELIOSPRING (HESP) 3.5.1 May  8 2018 / 09:56:38 (397a1b990) MSP API: 1.40
 # IMU-F Version: 106
 
 # name
@@ -447,7 +447,7 @@ set imu_dcm_kp = 7013
 set imu_dcm_ki = 13
 set small_angle = 25
 set auto_disarm_delay = 5
-set gyro_cal_on_first_arm = ON
+set gyro_cal_on_first_arm = OFF
 set use_stick_arming = OFF
 set gps_provider = NMEA
 set gps_sbas_mode = AUTO
@@ -489,7 +489,7 @@ set osd_tim1 = 2560
 set osd_tim2 = 2561
 set osd_vbat_pos = 234
 set osd_rssi_pos = 234
-set osd_tim_1_pos = 234
+set osd_tim_1_pos = 2104
 set osd_tim_2_pos = 234
 set osd_remaining_time_estimate_pos = 234
 set osd_flymode_pos = 234
@@ -516,7 +516,7 @@ set osd_debug_pos = 234
 set osd_power_pos = 234
 set osd_pidrate_profile_pos = 234
 set osd_warnings_pos = 2377
-set osd_avg_cell_voltage_pos = 234
+set osd_avg_cell_voltage_pos = 2436
 set osd_pit_ang_pos = 234
 set osd_rol_ang_pos = 234
 set osd_battery_usage_pos = 234
@@ -648,4 +648,6 @@ set yaw_srate = 82
 set tpa_rate = 10
 set tpa_breakpoint = 1650
 
-# 
+#
+
+Write your command here
