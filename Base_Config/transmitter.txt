@@ -1,0 +1,8 @@
+# rxrange
+rxrange 0 987 2011
+rxrange 1 987 2011
+rxrange 2 987 2011
+rxrange 3 987 2011
+
+# map
+map TAER1234
